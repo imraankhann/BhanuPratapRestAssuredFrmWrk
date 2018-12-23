@@ -7,22 +7,52 @@ import com.google.gson.GsonBuilder;
 import com.jayway.restassured.response.Response;
 import commonMethods.WebserviceCommonMethods;
 import org.json.JSONObject;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utils.EndPointUrl;
 import utils.ParseJson;
 import utils.Url;
 
+import java.util.ArrayList;
+
 
 public class TC_001 {
     Response response;
 
+    ArrayList<Integer> userId;
+    ArrayList<Object> firstName;
+    ArrayList<Object> avatar;
+    ArrayList<Object> lastName;
+
     @BeforeClass
-    public void setUp(){
+    public void setUp() {
+        userId = new ArrayList<Integer>();
+        firstName = new ArrayList<Object>();
+        avatar = new ArrayList<Object>();
+        lastName = new ArrayList<Object>();
+
 
     }
 
+
+
+/*@DataProvider(name = "getUserById")
+    public Object[][] getUserById() {
+        Object[][] result = new Object[userId.size()][3];
+        for (int i = 0; i < result.length; i++) {
+            result[i][0] = userId.get(i);
+            result[i][1] = firstName.get(i);
+            result[i][2] = avatar.get(i);
+            result[i][3] = lastName.get(i);
+
+        }
+        return result;
+    }*/
+    //@Test (dataProvider = "getUserById")
     @Test
+    //public void verifyGetAllUsers(String userId,String firstName, String avatar, String lastName){
     public void verifyGetAllUsers(){
         Gson gson=new GsonBuilder().create();
         Data data;
@@ -35,6 +65,10 @@ public class TC_001 {
             System.out.println("Printing firstName : "+data.getFirstName());
             System.out.println("Printing lastName : "+data.getLastName());
             getUsersObj=gson.fromJson(response.getBody().asString(),GetUsersObj.class);
+            /*Assert.assertEquals(userId,data.getId());
+            Assert.assertEquals(firstName,data.getFirstName());
+            Assert.assertEquals(avatar,data.getAvatar());
+            Assert.assertEquals(lastName,data.getLastName());*/
             System.out.println("========================================");
 
         }
