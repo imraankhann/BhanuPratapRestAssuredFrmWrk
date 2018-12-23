@@ -39,7 +39,7 @@ public class TC_001 {
 
 
 /*@DataProvider(name = "getUserById")
-    public Object[][] getUserById() {
+    public Object[][] getUserId() {
         Object[][] result = new Object[userId.size()][3];
         for (int i = 0; i < result.length; i++) {
             result[i][0] = userId.get(i);
@@ -51,7 +51,7 @@ public class TC_001 {
         return result;
     }*/
     //@Test (dataProvider = "getUserById")
-    @Test
+   // @Test
     //public void verifyGetAllUsers(String userId,String firstName, String avatar, String lastName){
     public void verifyGetAllUsers(){
         Gson gson=new GsonBuilder().create();
@@ -86,4 +86,38 @@ public class TC_001 {
 
 
     }
+
+
+    @DataProvider(name="addUser")
+    public Object[][] adduser(){
+        Object[][] result=new Object[2][3];
+        result[0][0]="{\n" +
+                "    \"name\": \"imran\",\n" +
+                "    \"job\": \"Indian resident\"\n" +
+                "}";
+        result[0][1]="imran";
+        result[0][2]="Indian resident";
+
+        result[1][0]="{\n" +
+                "    \"name\": \"Dilip\",\n" +
+                "    \"job\": \"Nepal resident\"\n" +
+                "}";
+        result[1][1]="Dilip";
+        result[1][2]="Nepal resident";
+
+        return result;
+
+    }
+
+    @Test(dataProvider = "addUser")
+    public void verifyAddUser(String json){
+   //      public void verifyAddUser(){
+        String url=Url.fixReqResUrl+EndPointUrl.CREATE_USER.getResourcePath();
+        response=WebserviceCommonMethods.post(url,json);
+        if(response.getStatusCode()==201){
+            System.out.println("Printing add user response : "+response);
+        }
+
+    }
+
 }
