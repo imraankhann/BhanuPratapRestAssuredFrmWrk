@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="4510" started-at="2018-12-23T15:36:57Z" finished-at="2018-12-23T15:37:02Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="4510" started-at="2018-12-23T15:36:57Z" finished-at="2018-12-23T15:37:02Z">
+      <class name="testScripts.TC_001">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testScripts.TC_001@5034c75a]" name="setUp" is-config="true" duration-ms="12" started-at="2018-12-23T21:06:57Z" finished-at="2018-12-23T21:06:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyAddUser(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScripts.TC_001@5034c75a]" name="verifyAddUser" duration-ms="3722" started-at="2018-12-23T21:06:57Z" data-provider="addUser" finished-at="2018-12-23T21:07:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{
+    "name": "imran",
+    "job": "Indian resident"
+}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[imran]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Indian resident]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddUser -->
+        <test-method status="PASS" signature="verifyAddUser(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScripts.TC_001@5034c75a]" name="verifyAddUser" duration-ms="738" started-at="2018-12-23T21:07:01Z" data-provider="addUser" finished-at="2018-12-23T21:07:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{
+    "name": "Dilip",
+    "job": "Nepal resident"
+}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Dilip]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Nepal resident]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddUser -->
+      </class> <!-- testScripts.TC_001 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
